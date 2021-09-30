@@ -6,5 +6,8 @@
 
 ## Building the Student app which uses unauthenticated access to the AppSync
 
-test video
+test video mp4
+![](test.mp4)
+
+test video mkv
 ![](test.mkv)
