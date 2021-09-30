@@ -7,7 +7,10 @@ This tutorial aims to demonstrate how AWS Amplify can be used to create a server
 
 With the help of Amplify two React applications will be configured to use AWS Cognito, AppSync and DynamoDB services, then the required services will be deployed in the AWS cloud and finally they will be hosted in S3 as static web sites. The first web site allows teachers to enter exam results and the second one can be used by students to view the exam results.
 
-\* Examples: 
+---
+
+\* Examples: [1](https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/) [2](https://docs.amplify.aws/start/getting-started/auth/q/integration/react/) 
+\** The following docs mention unauthenticated method, but do not provide full solution:
 
 ## Buildig the Teacher app which uses Cognito for authentication
 
