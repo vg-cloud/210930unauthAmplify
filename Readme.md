@@ -13,6 +13,11 @@ With the help of Amplify two React applications will be configured to use AWS Co
 
 \** The following docs mention unauthenticated method, but do not provide full solution: [1](https://docs.amplify.aws/cli/graphql-transformer/auth/#public-authorization), [2](https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html)
 
+## Demo of the app
+This video shows both apps in use. The teacher will authenticate and will start entering the exam results. A student will use another app to view results, which will be refreshed automatidally
+
+
+
 ### List of AWS Services and Tools used in this tutorial
 
 #### AWS Services
@@ -76,6 +81,10 @@ With the help of Amplify two React applications will be configured to use AWS Co
         Amplify.configure(awsconfig);
 
 - Replace the content of App.js with the code in the file 'Teacher_final_App.js'
+The Teacher app uses the default authentication to interact with AppSync and the follwing code will not work, if a user is not authenticated
+
+        const savedExamResult = await API.graphql({ query: mutations.createResults, variables: {input: studentResult}});
+
 - Create user in Cognito with the following command
 
         aws cognito teacheradmin ... TBD
@@ -86,7 +95,7 @@ Note: When adding hosting, choose HTTP with S3 option
         amplify add hosting
         amplify publish
 
-### Step 1: Enable unauthenticated access
+### Step 6: Enable unauthenticated access
 When running 'auth update' command, choose 'Walkthrough all the auth configurations', then 'User Sign-Up, Sign-In, connected with AWS IAM controls' and finally confirm with yes when you get this prompt 'Allow unauthenticated logins?'
 
         amplify auth update
@@ -94,6 +103,55 @@ When running 'auth update' command, choose 'Walkthrough all the auth configurati
 
 ## Building the Student app which uses unauthenticated access to the AppSync
 
+### Overview of the steps
+1. Create the student app
+2. Fetch upstream backend environment definition from the cloud and update the local environment to match that definition (amplify pull)
+3. Modify the student app code
+- remove the authentication UI
+- fetch the data using IAM unauthenticated method
+4. Publish the app manually using S3 hosting
+
+### Step 1: Create the student app
+        npx create-react-app student-app
+        cd student-app
+        npm start
+
+### Step 2: Fetch upstream backend environment definition from the cloud and update the local environment to match that definition
+
+        amplify pull
+
+- Install default Amplify packages and authentication UI libraries
+
+        npm install aws-amplify
+        npm install @aws-amplify/ui-react
+
+-  Add the following three lines to the 'index.js' file in your application 'src' folder
+
+        import Amplify, { Auth } from 'aws-amplify';
+        import awsconfig from './aws-exports';
+        Amplify.configure(awsconfig);
+
+### Step 3: Modify the student app code
+- Replace the content of App.js with the code in the file 'Student_App.js'
+- Note how the data is fetched now using IAM unauthenticated method
+
+        const fetchedExamResults = await API.graphql({ query: listResults, authMode: 'AWS_IAM' });
+
+- This app demonstrates the subscription capability of GraphQL. The code below subscribes to the new record creation events and when it happens, the data will be reloaded 
+
+    const subscriptionUpdateSHL = API.graphql(
+      {
+        query: onCreateResults,
+        operationName: 'onCreateResult',
+        authMode: 'AWS_IAM'
+      }
+    ).subscribe({
+      next: ({ provider, value }) => {
+        console.log('Subscription worked!!!');
+        fetchExamResults();
+      },
+      error: (error) => console.log('Error subscribing...', JSON.stringify(error)),
+    });
 
 
 
