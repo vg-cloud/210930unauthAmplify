@@ -16,6 +16,7 @@ With the help of Amplify two React applications will be configured to use AWS Co
 ## Demo of the app
 This video shows both apps in use. The teacher will authenticate and will start entering the exam results. A student will use another app to view results, which will be refreshed automatidally
 
+**30-Sep-21 When I tried to record the demo and I tried to login in the first app, I got the error message: 'The quota has been exceeded.' I will try again tomorrow**
 
 
 ### List of AWS Services and Tools used in this tutorial
@@ -123,7 +124,6 @@ When running 'auth update' command, choose 'Walkthrough all the auth configurati
 - Install default Amplify packages and authentication UI libraries
 
         npm install aws-amplify
-        npm install @aws-amplify/ui-react
 
 -  Add the following three lines to the 'index.js' file in your application 'src' folder
 
@@ -153,7 +153,4 @@ When running 'auth update' command, choose 'Walkthrough all the auth configurati
       error: (error) => console.log('Error subscribing...', JSON.stringify(error)),
     });
 
-
-
-https://user-images.githubusercontent.com/79142295/135422717-30e81732-50ae-4c1f-b698-fd32f1f2fe95.mp4
 
