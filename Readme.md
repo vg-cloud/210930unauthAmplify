@@ -60,7 +60,7 @@ This video shows both apps in use. The teacher will authenticate and will start 
 
         amplify init
 
-- Add API. Two outhentication methods should be added: Cognito User Pools (default) and IAM
+- Add API. Two outhentication methods should be added: Cognito User Pools (default) and IAM. During this step, GraphQL schema has to be defined. It can be found in 'schema.graphql' file.
 
         amplify add api
 
@@ -152,5 +152,4 @@ When running 'auth update' command, choose 'Walkthrough all the auth configurati
       },
       error: (error) => console.log('Error subscribing...', JSON.stringify(error)),
     });
-
 
