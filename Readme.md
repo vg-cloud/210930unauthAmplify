@@ -50,11 +50,17 @@ With the help of Amplify two React applications will be configured to use AWS Co
 
 ### Step 2: Add configuration of AWS services to the app
 - Initializing a new project
+
         amplify init
+
 - Add API. Two outhentication methods should be added: Cognito User Pools (default) and IAM
+
         amplify add api
+
 - Provision cloud resources
+
         amplify push
+- lkjkl
 
 ## Building the Student app which uses unauthenticated access to the AppSync
 
