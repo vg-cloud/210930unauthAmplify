@@ -40,9 +40,11 @@ With the help of Amplify two React applications will be configured to use AWS Co
 ### Step 1: Create fully functional React app, supporting data models
 - Pre-requisites: Node and npm installed
 - Create a new single-page application
+
     npx create-react-app teacher-app
     cd teacher-app
     npm start
+
 - Replace App.js with the code in the file 'Teacher_First_App.js'
 - Check the app: fill in the form and start adding the data. The app should be functional, but it won't save the data
 
