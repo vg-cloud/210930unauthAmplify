@@ -26,15 +26,16 @@ With the help of Amplify two React applications will be configured to use AWS Co
 
 #### AWS Tools
 - Amplify
+- AWS CLI
 
 ## Building the Teacher app which uses Cognito for authentication
 
 ### Overview of the steps
 1. Create fully functional React app, supporting data models
 2. Add configuration of AWS services to the app (amplify init, amplify add api)
-3. Deploy services in the cloud (amplify push)
-4. Update app code to use AWS provided Auth UI and to store data in Dynamo DB
-5. Deploy app (amplify add hosting, amplify publish)
+3. Provision cloud resources (amplify push)
+4. Update the app code to use AWS provided Auth UI and to store data in Dynamo DB
+5. Deploy the app (amplify add hosting, amplify publish)
 6. Enable unauthenticated access
 
 ### Step 1: Create fully functional React app, supporting data models
@@ -57,9 +58,11 @@ With the help of Amplify two React applications will be configured to use AWS Co
 
         amplify add api
 
-- Provision cloud resources
+### Step 3: Provision cloud resources
 
         amplify push
+
+### Step 4: Update app code to use AWS provided Auth UI and to store data in Dynamo DB
 
 - Install default Amplify packages and authentication UI libraries
 
@@ -73,8 +76,24 @@ With the help of Amplify two React applications will be configured to use AWS Co
         Amplify.configure(awsconfig);
 
 - Replace the content of App.js with the code in the file 'Teacher_final_App.js'
+- Create user in Cognito with the following command
+
+        aws cognito teacheradmin ... TBD
+
+### Step 5: Publish the app
+Note: When adding hosting, choose HTTP with S3 option
+
+        amplify add hosting
+        amplify publish
+
+### Step 1: Enable unauthenticated access
+When running 'auth update' command, choose 'Walkthrough all the auth configurations', then 'User Sign-Up, Sign-In, connected with AWS IAM controls' and finally confirm with yes when you get this prompt 'Allow unauthenticated logins?'
+
+        amplify auth update
+        amplify push
 
 ## Building the Student app which uses unauthenticated access to the AppSync
+
 
 
 
