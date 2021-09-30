@@ -45,7 +45,7 @@ With the help of Amplify two React applications will be configured to use AWS Co
         cd teacher-app
         npm start
 
-- Replace App.js with the code in the file 'Teacher_First_App.js'
+- Replace the content of App.js with the code in the file 'Teacher_First_App.js'
 - Check the app: fill in the form and start adding the data. The app should be functional, but it won't save the data
 
 ### Step 2: Add configuration of AWS services to the app
@@ -60,7 +60,19 @@ With the help of Amplify two React applications will be configured to use AWS Co
 - Provision cloud resources
 
         amplify push
-- lkjkl
+
+- Install default Amplify packages and authentication UI libraries
+
+        npm install aws-amplify
+        npm install @aws-amplify/ui-react
+
+-  Add the following three lines to the 'index.js' file in your application 'src' folder
+
+        import Amplify, { Auth } from 'aws-amplify';
+        import awsconfig from './aws-exports';
+        Amplify.configure(awsconfig);
+
+- Replace the content of App.js with the code in the file 'Teacher_final_App.js'
 
 ## Building the Student app which uses unauthenticated access to the AppSync
 
