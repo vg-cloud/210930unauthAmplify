@@ -10,6 +10,7 @@ With the help of Amplify two React applications will be configured to use AWS Co
 ---
 
 \* Examples: [1](https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/) [2](https://docs.amplify.aws/start/getting-started/auth/q/integration/react/) 
+
 \** The following docs mention unauthenticated method, but do not provide full solution:
 
 ## Buildig the Teacher app which uses Cognito for authentication
