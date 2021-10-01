@@ -16,7 +16,7 @@ With the help of Amplify two React applications will be configured to use AWS Co
 ## Demo of the app
 This video shows both apps in use. The teacher will authenticate and will start entering the exam results. A student will use another app to view results, which will be refreshed automatidally
 
-**30-Sep-21 When I tried to record the demo and I tried to login in the first app, I got the error message: 'The quota has been exceeded.' I will try again tomorrow**
+https://user-images.githubusercontent.com/79142295/135584093-0c6b337c-3364-4acd-972c-72b180c523a2.mp4
 
 
 ### List of AWS Services and Tools used in this tutorial
