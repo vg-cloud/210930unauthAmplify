@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     console.log('Trying to setup subscription...')
-    const subscriptionUpdateSHL = API.graphql(
+    const subscriptionOnCreateResult = API.graphql(
       {
         query: onCreateResults,
         operationName: 'onCreateResult',
@@ -30,7 +30,7 @@ function App() {
     });
 
     return function cleanup() {
-      subscriptionUpdateSHL.unsubscribe();
+      subscriptionOnCreateResult.unsubscribe();
     };
   }, []);
 
