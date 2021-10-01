@@ -14,7 +14,7 @@ With the help of Amplify two React applications will be configured to use AWS Co
 \** The following docs mention unauthenticated method, but do not provide full solution: [1](https://docs.amplify.aws/cli/graphql-transformer/auth/#public-authorization), [2](https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html)
 
 ## Demo of the app
-This video shows both apps in use. The teacher will authenticate and will start entering the exam results. A student will use another app to view results, which will be refreshed automatidally
+This video shows both apps in use. The teacher will authenticate and will start entering the exam results. A student will use another app and no authentication will be needed. The exam results will be refreshed as soon as the teacher adds a new record.
 
 https://user-images.githubusercontent.com/79142295/135584093-0c6b337c-3364-4acd-972c-72b180c523a2.mp4
 
