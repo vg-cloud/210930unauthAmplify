@@ -1,5 +1,5 @@
 Console log of the 'amplify add api':
-
+   
    % amplify add api
    ? Please select from one of the below mentioned services: GraphQL
    ? Provide API name: 211004teacher
@@ -11,5 +11,5 @@ Console log of the 'amplify add api':
    ? Enable conflict detection? No
    ? Do you have an annotated GraphQL schema? Yes
    ? Provide your schema file path: ./app-src/schema.graphql
-
+   
 end
