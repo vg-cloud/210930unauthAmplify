@@ -106,8 +106,8 @@ The Teacher app uses the UI components provided by Amplify. For this particular 
         <AmplifyAuthenticator>
           <AmplifySignIn
             hideSignUp="true"
-              slot="sign-in"
-            ></AmplifySignIn>
+            slot="sign-in"
+          ></AmplifySignIn>
         </AmplifyAuthenticator>
 
 ### Step 5: Publish the app
