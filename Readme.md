@@ -139,11 +139,11 @@ When running 'auth update' command, choose 'Walkthrough all the auth configurati
 
 ### Step 2: Fetch upstream backend environment definition from the cloud and update the local environment to match that definition
 
-First step:
+- First step:
 
         amplify pull
         
-Next step is to go to AWS Console, and find in the AppSync service the defintion of the student app. In the 'Getting Started' section you can find the command to generate GraphQL documents (queries, mutations, and subscriptions), similar to this:
+- Next step is to go to AWS Console, and find in the AppSync service the defintion of the student app. In the 'Getting Started' section you can find the command to generate GraphQL documents (queries, mutations, and subscriptions), similar to this:
 
         amplify add codegen --apiId acz7jy5pszerbhuwlqcksn276e
 
