@@ -74,7 +74,7 @@ Default values can be used for the init phase, but when asked to choose AWS prof
 
         aws cognito-idp list-user-pools --max-results 10
 
-- Take the Id value from the output of the previous command and put the value in the command below. Alos put any of your working email accounts as value for email.
+- Take the Id value from the output of the previous command and put the value in the command below. Also put any of your working email accounts as value for email.
 
         aws cognito-idp admin-create-user --username teacher \
         --user-attributes Name=email,Value=EMAIL Name=phone_number,Value="+15555551212" \
@@ -82,9 +82,10 @@ Default values can be used for the init phase, but when asked to choose AWS prof
 
 ### Step 4: Update app code to use AWS provided Auth UI and to store data in Dynamo DB
 
-- Install default Amplify packages and authentication UI libraries
+- Install default Amplify packages, React and authentication UI libraries
 
         npm install aws-amplify
+        npm install aws-amplify-react
         npm install @aws-amplify/ui-react
 
 -  Add the following three lines to the 'index.js' file in your application 'src' folder
