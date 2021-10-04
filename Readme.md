@@ -61,7 +61,8 @@ https://user-images.githubusercontent.com/79142295/135584093-0c6b337c-3364-4acd-
         amplify init
 
 Default values can be used for the init phase, but when asked to choose AWS profile, you might want to use your custom AWS profile, created specifically for your Amplify projects.
-- Add GraphQL API. Two authurization types should be added: Cognito User Pool first (thus it will become a default one) and IAM. During this step, GraphQL schema has to be defined. Take the content of the 'schema.graphql' file as the schema.
+- Copy the 'app-schema.graphql' file to the 'src' folder.
+- Add GraphQL API. Two authurization types should be added: Cognito User Pool first (thus it will become a default one) and IAM. At the end, type './src/app-schema.graphql' as a path to the schema file.
 
         amplify add api
 
