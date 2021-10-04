@@ -19,7 +19,7 @@ function App() {
 
 
   // prettier-ignore
-  const ExamTemplate = { Subject: '', date: '', teacher: '', };
+  const ExamTemplate = { subject: '', date: '', teacher: '', };
   const StudentResultTemplate = { student: '', grade: '' };
   // prettier-ignore
   const StudentResultTemplateBis = { id: '2', student: 'Richardson', grade: '9', };
@@ -72,6 +72,9 @@ function App() {
             <header style={{ display: 'flex', flexDirection: 'row', backgroundColor: '#282c34', color: 'white', justifyContent: 'center', alignItems: 'center', height: '8vh'}}>
               <img src={logo} alt="logo" style={{ height: '7vmin',  pointerEvents: 'none' }}/>
               <p>   __________Teacher app__________   </p>
+              {examState === 'Saved' && (
+                <button onClick={newExam} type="button">new exam</button>
+              )}
               <AmplifySignOut />
             </header>
             <body style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#f1f2f4', minHeight: '92vh'}}>
@@ -80,13 +83,13 @@ function App() {
                 {examState === 'notSaved' && (
                   <form>
                     <input type="text" name="date" size="9" value={Exam.date} onChange={handleExamChange} placeholder="Date"></input>
-                    <input type="text" name="Subject" size="12" value={Exam.Subject} onChange={handleExamChange} placeholder="Subject"></input>
+                    <input type="text" name="subject" size="12" value={Exam.subject} onChange={handleExamChange} placeholder="Subject"></input>
                     <input type="text" name="teacher" size="14" value={Exam.teacher} onChange={handleExamChange} placeholder="Teacher name"></input>
                     <button onClick={saveExam} type="button">Save</button>
                   </form>
                 )}
                 {examState === 'Saved' && (
-                  <p>Date: {Exam.date}<br></br>Subject: {Exam.Subject}<br></br>Teacher: {Exam.teacher}</p>
+                  <p>Date: {Exam.date}<br></br>Subject: {Exam.subject}<br></br>Teacher: {Exam.teacher}</p>
                 )}
                 
               </div>
