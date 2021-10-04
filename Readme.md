@@ -60,6 +60,7 @@ https://user-images.githubusercontent.com/79142295/135584093-0c6b337c-3364-4acd-
 
         amplify init
 
+Default values can be used for the init phase, but when asked to choose AWS profile, you might want to use your custom AWS profile, created specifically for your Amplify projects.
 - Add API. Two outhentication methods should be added: Cognito User Pools (default) and IAM. During this step, GraphQL schema has to be defined. It can be found in 'schema.graphql' file.
 
         amplify add api
