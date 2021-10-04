@@ -1,6 +1,6 @@
 log
 
-    vadim@MacBook-Pro-de-Vadim 211004teacher % amplify auth update
+    % amplify auth update
     Please note that certain attributes may not be overwritten if you choose to use defaults settings.
 
     You have configured resources that might depend on this Cognito resource.  Updating this Cognito resource could have unintended side effects.
