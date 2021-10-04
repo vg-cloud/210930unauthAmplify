@@ -5,7 +5,7 @@ import { listExams, listResults } from './graphql/queries'
 import { onCreateResults } from './graphql/subscriptions'
 
 function App() {
-  const [Exam, setExam] = useState({date: 'loading...', Subject: 'loading...', teacher: 'loading...'});
+  const [Exam, setExam] = useState({date: 'loading...', subject: 'loading...', teacher: 'loading...'});
   const [examResults, setExamResults] = useState([])
 
   useEffect(() => {
@@ -62,7 +62,7 @@ function App() {
     <body style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#f1f2f4', minHeight: '92vh'}}>
       <h2>Exam information</h2>
       <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', width: '75%', maxWidth: '25em', paddingBottom: '1em', }}>
-          <p>Date: {Exam.date}<br></br>Subject: {Exam.Subject}<br></br>Teacher: {Exam.teacher}</p> 
+          <p>Date: {Exam.date}<br></br>Subject: {Exam.subject}<br></br>Teacher: {Exam.teacher}</p> 
       </div>
       <h2>Results</h2>
       <div>
