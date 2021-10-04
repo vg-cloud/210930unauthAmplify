@@ -163,19 +163,19 @@ When running 'auth update' command, choose 'Walkthrough all the auth configurati
 
         const fetchedExamResults = await API.graphql({ query: listResults, authMode: 'AWS_IAM' });
 
-- This app demonstrates the subscription capability of GraphQL. The code below subscribes to the new record creation events and when it happens, the data will be reloaded 
+- This app demonstrates also the subscription capability of GraphQL. The code below subscribes to the new record creation events and when it happens, the data will be reloaded 
 
-    const subscriptionUpdateSHL = API.graphql(
-      {
-        query: onCreateResults,
-        operationName: 'onCreateResult',
-        authMode: 'AWS_IAM'
-      }
-    ).subscribe({
-      next: ({ provider, value }) => {
-        console.log('Subscription worked!!!');
-        fetchExamResults();
-      },
-      error: (error) => console.log('Error subscribing...', JSON.stringify(error)),
-    });
+            const subscriptionUpdateSHL = API.graphql(
+              {
+                query: onCreateResults,
+                operationName: 'onCreateResult',
+                authMode: 'AWS_IAM'
+              }
+            ).subscribe({
+              next: ({ provider, value }) => {
+                console.log('Subscription worked!!!');
+                fetchExamResults();
+              },
+              error: (error) => console.log('Error subscribing...', JSON.stringify(error)),
+            });
 
