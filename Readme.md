@@ -66,9 +66,19 @@ Default values can be used for the init phase, but when asked to choose AWS prof
 
         amplify add api
 
-### Step 3: Provision cloud resources
+### Step 3: Provision cloud resources and create teacher admin account
 
         amplify push
+        
+- In order to create a new user, get the user pool id first
+
+        aws cognito-idp list-user-pools --max-results 10
+
+- Take the Id value from the output of the previous command and put the value in the command below
+
+        aws cognito-idp admin-create-user --username teacher \
+        --user-attributes Name=email,Value=vadim@goussev.net Name=phone_number,Value="+15555551212" \
+        --user-pool-id USERPOOLID --temporary-password tempmdp0007
 
 ### Step 4: Update app code to use AWS provided Auth UI and to store data in Dynamo DB
 
