@@ -12,7 +12,7 @@ type Exam @model @auth(rules: [
         { allow: public, provider: iam, operations: [read] }
     ]) {
   id: ID!
-  Subject: String!
+  subject: String!
   date: String!
   teacher: String!
 }
