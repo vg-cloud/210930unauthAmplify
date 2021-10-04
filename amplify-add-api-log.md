@@ -11,4 +11,5 @@ Console log of the 'amplify add api':
    ? Enable conflict detection? No
    ? Do you have an annotated GraphQL schema? Yes
    ? Provide your schema file path: ./app-src/schema.graphql
-   
+
+end
