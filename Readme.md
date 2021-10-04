@@ -91,8 +91,8 @@ The example output of the add api command can be found in the 'amplify-add-api-l
 - Install default Amplify packages, React and authentication UI libraries
 
         npm install aws-amplify
-        npm install aws-amplify-react
         npm install @aws-amplify/ui-react
+        npm install @aws-amplify/ui-components
 
 -  Add the following three lines to the 'index.js' file in your application 'src' folder
 
