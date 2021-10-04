@@ -67,10 +67,11 @@ https://user-images.githubusercontent.com/79142295/135584093-0c6b337c-3364-4acd-
 
 Default values can be used for the init phase, but when asked to choose AWS profile, you might want to use your custom AWS profile, created specifically for your Amplify projects in the previous step.
 - Copy the 'app-schema.graphql' file to the 'src' folder.
-- Add GraphQL API. Two authurization types should be added: Cognito User Pool first (thus it will become a default one) and IAM. At the end, type './src/app-schema.graphql' as a path to the schema file.
+- Add GraphQL API. Two authurization types should be added: Cognito User Pool first (thus it will become a default one) and IAM. At the end, type './src/app-schema.graphql' as a path to the schema file?
 
         amplify add api
 
+The example output of the add api command can be found in the 'amplify-add-api-log.md' file.
 ### Step 3: Provision cloud resources and create teacher admin account
 
         amplify push
