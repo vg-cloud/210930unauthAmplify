@@ -56,11 +56,15 @@ https://user-images.githubusercontent.com/79142295/135584093-0c6b337c-3364-4acd-
 - Check the app: fill in the form and start adding the data. The app should be functional, but your input won't be saved anywhere.
 
 ### Step 2: Add configuration of AWS services to the app
+- If you will use Amplify for the first time, it needs to be configured first as per [Getting started tutorial](https://docs.amplify.aws/start/getting-started/installation/q/integration/js/#option-1-watch-the-video-guide)
+
+        amplify configure
+
 - Initializing a new project
 
         amplify init
 
-Default values can be used for the init phase, but when asked to choose AWS profile, you might want to use your custom AWS profile, created specifically for your Amplify projects.
+Default values can be used for the init phase, but when asked to choose AWS profile, you might want to use your custom AWS profile, created specifically for your Amplify projects in the previous step.
 - Copy the 'app-schema.graphql' file to the 'src' folder.
 - Add GraphQL API. Two authurization types should be added: Cognito User Pool first (thus it will become a default one) and IAM. At the end, type './src/app-schema.graphql' as a path to the schema file.
 
