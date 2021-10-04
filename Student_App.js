@@ -37,7 +37,9 @@ function App() {
   const fetchExam = async () => {
     try {
       const fetchedExam = await API.graphql({ query: listExams, authMode: 'AWS_IAM' });
-      setExam(fetchedExam.data.listExams.items[0]);
+      if (fetchedExam.data.listExams.items.length >= 1) {
+        setExam(fetchedExam.data.listExams.items[0]);
+      }
     } catch (error) {
       alert(`Could not get Exam data ${JSON.stringify(error)}`)
     }
