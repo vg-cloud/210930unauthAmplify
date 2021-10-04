@@ -111,7 +111,7 @@ The Teacher app uses the UI components provided by Amplify. For this particular 
         </AmplifyAuthenticator>
 
 ### Step 5: Publish the app
-Note: When adding hosting, choose HTTP with S3 option
+Note: When adding hosting, choose HTTP with S3 option (see an example inside 'amplify_add_hosting_log.md' file)
 
         amplify add hosting
         amplify publish
