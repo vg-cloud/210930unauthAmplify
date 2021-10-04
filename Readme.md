@@ -56,8 +56,9 @@ https://user-images.githubusercontent.com/79142295/135584093-0c6b337c-3364-4acd-
 - Check the app: fill in the form and start adding the data. The app should be functional, but your input won't be saved anywhere.
 
 ### Step 2: Add configuration of AWS services to the app
-- If you will use Amplify for the first time, it needs to be configured first as per [Getting started tutorial](https://docs.amplify.aws/start/getting-started/installation/q/integration/js/#option-1-watch-the-video-guide)
+- If you will use Amplify for the first time, it Amplify CLI should be installed and configured as per [Getting started tutorial](https://docs.amplify.aws/start/getting-started/installation/q/integration/js/#option-1-watch-the-video-guide)
 
+        sudo npm install -g @aws-amplify/cli
         amplify configure
 
 - Initializing a new project
