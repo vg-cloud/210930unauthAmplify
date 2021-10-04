@@ -101,13 +101,14 @@ The example output of the add api command can be found in the 'amplify-add-api-l
         Amplify.configure(awsconfig);
 
 - Replace the content of App.js with the code in the file 'Teacher_final_App.js'
-The Teacher app uses the default authentication to interact with AppSync and the follwing code will not work, if a user is not authenticated
+The Teacher app uses the UI components provided by Amplify. For this particular application, Sign-Up option has been disabled, because teacher account has been already created and we would not want anyone who has access to this application to be able to create another account.
 
-        const savedExamResult = await API.graphql({ query: mutations.createResults, variables: {input: studentResult}});
-
-- Create user in Cognito with the following command
-
-        aws cognito teacheradmin ... TBD
+    <AmplifyAuthenticator>
+      <AmplifySignIn
+        hideSignUp="true"
+          slot="sign-in"
+        ></AmplifySignIn>
+    </AmplifyAuthenticator>
 
 ### Step 5: Publish the app
 Note: When adding hosting, choose HTTP with S3 option
