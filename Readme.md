@@ -46,14 +46,14 @@ https://user-images.githubusercontent.com/79142295/135584093-0c6b337c-3364-4acd-
 
 ### Step 1: Create fully functional React app, supporting data models
 - Pre-requisites: Node and npm installed
-- Create a new single-page application
+- Create a new single-page React application. At the end of this step you should have a default React application running.
 
         npx create-react-app teacher-app
         cd teacher-app
         npm start
 
-- Replace the content of App.js with the code in the file 'Teacher_First_App.js'
-- Check the app: fill in the form and start adding the data. The app should be functional, but it won't save the data
+- Replace the content of App.js with the code in the file 'Teacher_local_App.js'.
+- Check the app: fill in the form and start adding the data. The app should be functional, but your input won't be saved anywhere.
 
 ### Step 2: Add configuration of AWS services to the app
 - Initializing a new project
