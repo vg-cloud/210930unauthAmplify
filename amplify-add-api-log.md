@@ -2,7 +2,7 @@ Console log of the 'amplify add api':
 
     % amplify add api
     ? Please select from one of the below mentioned services: GraphQL
-    ? Provide API name: 211004teacher
+    ? Provide API name: teacher
     ? Choose the default authorization type for the API Amazon Cognito User Pool
     Using service: Cognito, provided by: awscloudformation
 
@@ -12,7 +12,7 @@ Console log of the 'amplify add api':
     Warning: you will not be able to edit these selections. 
     How do you want users to be able to sign in? Username
     Do you want to configure advanced settings? No, I am done.
-    Successfully added auth resource 211004teacher985036b5 locally
+    Successfully added auth resource teacher985036b5 locally
 
     Some next steps:
     "amplify push" will build all your local backend resources and provision it in the cloud
@@ -27,11 +27,11 @@ Console log of the 'amplify add api':
 
     GraphQL schema compiled successfully.
 
-    Edit your schema at /Users/vadim/prjs/211004teacher/amplify/backend/api/211004teacher/schema.graphql or place .graphql files in a directory at /Users/vadim/prjs/211004teacher/amplify/backend/api/211004teacher/schema
-    Successfully added resource 211004teacher locally
+    Edit your schema at /.../teacher/amplify/backend/api/211004teacher/schema.graphql or place .graphql files in a directory at /.../teacher/amplify/backend/api/teacher/schema
+    Successfully added resource teacher locally
 
     Some next steps:
     "amplify push" will build all your local backend resources and provision it in the cloud
     "amplify publish" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
   
-end
+
