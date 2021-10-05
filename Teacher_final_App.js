@@ -33,6 +33,7 @@ function App() {
   const saveExam = async () => {
     try {
       const savedExam = await API.graphql({ query: mutations.createExam, variables: {input: Exam}});
+      console.log('Exam object: ', Exam);
       setExamState('Saved');
     } catch (error) {
       alert(`error saving Exam ${JSON.stringify(error)}`);
