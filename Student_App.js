@@ -2,10 +2,10 @@ import logo from './logo.svg';
 import React, { useEffect, useState } from 'react'
 import { API } from 'aws-amplify'
 import { listExams, listResults } from './graphql/queries'
-import { onCreateResults } from './graphql/subscriptions'
+import { onCreateResults, onCreateExam } from './graphql/subscriptions'
 
 function App() {
-  const [Exam, setExam] = useState({date: 'loading...', subject: 'loading...', teacher: 'loading...'});
+  const [Exam, setExam] = useState({date: 'Please wait...', subject: 'Please wait...', teacher: 'Please wait...'});
   const [examResults, setExamResults] = useState([])
 
   useEffect(() => {
@@ -14,7 +14,25 @@ function App() {
   }, [])
 
   useEffect(() => {
-    console.log('Trying to setup subscription...')
+    const subscriptionOnCreateExam = API.graphql(
+      {
+        query: onCreateExam,
+        operationName: 'onCreateExam',
+        authMode: 'AWS_IAM'
+      }
+    ).subscribe({
+      next: ({ provider, value }) => {
+        fetchExam();
+      },
+      error: (error) => console.log('Error subscribing...', JSON.stringify(error)),
+    });
+
+    return function cleanup() {
+      subscriptionOnCreateExam.unsubscribe();
+    };
+  }, []);
+  
+  useEffect(() => {
     const subscriptionOnCreateResult = API.graphql(
       {
         query: onCreateResults,
