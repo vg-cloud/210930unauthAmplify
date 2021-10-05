@@ -179,3 +179,11 @@ When running 'auth update' command, choose 'Walkthrough all the auth configurati
               error: (error) => console.log('Error subscribing...', JSON.stringify(error)),
             });
 
+### Step 4: Publish app manually
+The student app has to be published manually, because only single hosting can be added to an Amplify project and it has been used for the Teacher app. Here is what needs to be done:
+
+- Create S3 bucket
+- Build the React app (npm run build)
+- Upload all folder and files located inside 'build' folder to this bucket
+- Enable public access and update bucketpolicy as per [this](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteAccessPermissionsReqd.html) document
+- Enable 'Static website hosting' from bucket properties
